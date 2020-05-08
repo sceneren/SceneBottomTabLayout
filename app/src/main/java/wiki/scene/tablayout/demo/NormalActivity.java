@@ -1,10 +1,10 @@
 package wiki.scene.tablayout.demo;
 
-import android.graphics.Color;
-import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+
+import android.graphics.Color;
+import android.os.Bundle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,14 +15,12 @@ import wiki.scene.tablayout.internal.BottomTabLayoutUtils;
 import wiki.scene.tablayout.view.NoTouchViewPager;
 import wiki.scene.tablayout.view.SimpleFragmentPageAdapter;
 
-import static wiki.scene.tablayout.demo.R.id.navigationView;
-
-public class BigCenterActivity extends AppCompatActivity {
+public class NormalActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_big_center);
+        setContentView(R.layout.activity_normal);
         PageNavigationView navigationView = findViewById(R.id.navigationView);
         NoTouchViewPager viewPager = findViewById(R.id.viewPager);
         List<String> titles = new ArrayList<>();
@@ -38,7 +36,7 @@ public class BigCenterActivity extends AppCompatActivity {
         NavigationController navigationController = navigationView.custom()
                 .addItem(BottomTabLayoutUtils.newItem(this, R.drawable.ic_restore_gray_24dp, R.drawable.ic_restore_teal_24dp, titles.get(0), defaultTextColor, checkedTextColor))
                 .addItem(BottomTabLayoutUtils.newItem(this, R.drawable.ic_favorite_gray_24dp, R.drawable.ic_favorite_teal_24dp, titles.get(1), defaultTextColor, checkedTextColor))
-                .addItem(BottomTabLayoutUtils.newRoundItem(this, R.drawable.ic_nearby_gray_24dp, R.drawable.ic_nearby_teal_24dp, titles.get(2), defaultTextColor, checkedTextColor))
+                .addItem(BottomTabLayoutUtils.newItem(this, R.drawable.ic_nearby_gray_24dp, R.drawable.ic_nearby_teal_24dp, titles.get(2), defaultTextColor, checkedTextColor))
                 .addItem(BottomTabLayoutUtils.newItem(this, R.drawable.ic_favorite_gray_24dp, R.drawable.ic_favorite_teal_24dp, titles.get(3), defaultTextColor, checkedTextColor))
                 .addItem(BottomTabLayoutUtils.newItem(this, R.drawable.ic_restore_gray_24dp, R.drawable.ic_restore_teal_24dp, titles.get(4), defaultTextColor, checkedTextColor))
                 .build();
