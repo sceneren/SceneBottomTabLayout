@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 29
@@ -9,6 +10,11 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     buildTypes {
@@ -24,4 +30,13 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
+}
+
+publish {
+    userOrg = 'scene'
+    groupId = 'wiki.scene.tablayout'
+    artifactId = 'SceneBottomTabLayout'
+    publishVersion = '1.0.0'
+    desc = '参考https://github.com/tyzlmjj/PagerBottomTabStrip进行二次封装'
+    website = 'https://github.com/sceneren/SceneBottomTabLayoutDemo.git'
 }
