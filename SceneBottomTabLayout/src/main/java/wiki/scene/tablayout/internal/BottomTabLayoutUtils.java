@@ -5,11 +5,17 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
 
+import androidx.annotation.ColorInt;
+import androidx.annotation.DrawableRes;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 
+import wiki.scene.tablayout.custom.SpecialTab;
+import wiki.scene.tablayout.custom.SpecialTabRound;
+import wiki.scene.tablayout.item.BaseTabItem;
 
-public class Utils {
+
+public class BottomTabLayoutUtils {
 
     /**
      * Drawable 染色
@@ -56,6 +62,28 @@ public class Utils {
         TypedValue typedValue = new TypedValue();
         context.getTheme().resolveAttribute(attrRes, typedValue, true);
         return typedValue.resourceId;
+    }
+
+    /**
+     * 正常tab
+     */
+    public static BaseTabItem newItem(Context context, @DrawableRes int drawable, @DrawableRes int checkedDrawable, String text, @ColorInt int textColor, @ColorInt int checkedTextColor) {
+        SpecialTab mainTab = new SpecialTab(context);
+        mainTab.initialize(drawable, checkedDrawable, text);
+        mainTab.setTextDefaultColor(textColor);//0xFF888888
+        mainTab.setTextCheckedColor(checkedTextColor);//0xFF888888
+        return mainTab;
+    }
+
+    /**
+     * 圆形tab
+     */
+    public static BaseTabItem newRoundItem(Context context, @DrawableRes int drawable, @DrawableRes int checkedDrawable, String text, @ColorInt int textColor, @ColorInt int checkedTextColor) {
+        SpecialTabRound mainTab = new SpecialTabRound(context);
+        mainTab.initialize(drawable, checkedDrawable, text);
+        mainTab.setTextDefaultColor(textColor);
+        mainTab.setTextCheckedColor(checkedTextColor);
+        return mainTab;
     }
 
 }

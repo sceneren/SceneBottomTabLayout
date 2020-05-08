@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.ViewPager;
 
-import wiki.scene.tablayout.internal.Utils;
+import wiki.scene.tablayout.internal.BottomTabLayoutUtils;
 import wiki.scene.tablayout.item.BaseTabItem;
 import wiki.scene.tablayout.listener.OnTabItemSelectedListener;
 import wiki.scene.tablayout.listener.SimpleTabItemSelectedListener;
@@ -88,7 +88,7 @@ public class NavigationController implements ItemController, BottomLayoutControl
 
     @Override
     public void addMaterialItem(int index, @NonNull Drawable defaultDrawable, @NonNull Drawable selectedDrawable, @NonNull String title, int selectedColor) {
-        mItemController.addMaterialItem(index, Utils.newDrawable(defaultDrawable), Utils.newDrawable(selectedDrawable), title, selectedColor);
+        mItemController.addMaterialItem(index, BottomTabLayoutUtils.newDrawable(defaultDrawable), BottomTabLayoutUtils.newDrawable(selectedDrawable), title, selectedColor);
     }
 
     @Override

@@ -26,7 +26,7 @@ import wiki.scene.tablayout.internal.CustomItemLayout;
 import wiki.scene.tablayout.internal.CustomItemVerticalLayout;
 import wiki.scene.tablayout.internal.MaterialItemLayout;
 import wiki.scene.tablayout.internal.MaterialItemVerticalLayout;
-import wiki.scene.tablayout.internal.Utils;
+import wiki.scene.tablayout.internal.BottomTabLayoutUtils;
 import wiki.scene.tablayout.item.BaseTabItem;
 import wiki.scene.tablayout.item.MaterialItemView;
 import wiki.scene.tablayout.item.OnlyIconMaterialItemView;
@@ -350,7 +350,7 @@ public class PageNavigationView extends ViewGroup {
          * @return {@link MaterialBuilder}
          */
         public MaterialBuilder addItem(@DrawableRes int drawableRes, @NonNull String title) {
-            addItem(drawableRes, drawableRes, title, Utils.getColorPrimary(getContext()));
+            addItem(drawableRes, drawableRes, title, BottomTabLayoutUtils.getColorPrimary(getContext()));
             return MaterialBuilder.this;
         }
 
@@ -363,7 +363,7 @@ public class PageNavigationView extends ViewGroup {
          * @return {@link MaterialBuilder}
          */
         public MaterialBuilder addItem(@DrawableRes int drawableRes, @DrawableRes int checkedDrawableRes, @NonNull String title) {
-            addItem(drawableRes, checkedDrawableRes, title, Utils.getColorPrimary(getContext()));
+            addItem(drawableRes, checkedDrawableRes, title, BottomTabLayoutUtils.getColorPrimary(getContext()));
             return MaterialBuilder.this;
         }
 
@@ -411,7 +411,7 @@ public class PageNavigationView extends ViewGroup {
          * @return {@link MaterialBuilder}
          */
         public MaterialBuilder addItem(@NonNull Drawable drawable, @NonNull String title) {
-            addItem(drawable, drawable, title, Utils.getColorPrimary(getContext()));
+            addItem(drawable, drawable, title, BottomTabLayoutUtils.getColorPrimary(getContext()));
             return MaterialBuilder.this;
         }
 
@@ -424,7 +424,7 @@ public class PageNavigationView extends ViewGroup {
          * @return {@link MaterialBuilder}
          */
         public MaterialBuilder addItem(@NonNull Drawable drawable, @NonNull Drawable checkedDrawable, @NonNull String title) {
-            addItem(drawable, checkedDrawable, title, Utils.getColorPrimary(getContext()));
+            addItem(drawable, checkedDrawable, title, BottomTabLayoutUtils.getColorPrimary(getContext()));
             return MaterialBuilder.this;
         }
 
@@ -452,8 +452,8 @@ public class PageNavigationView extends ViewGroup {
          */
         public MaterialBuilder addItem(@NonNull Drawable drawable, @NonNull Drawable checkedDrawable, @NonNull String title, @ColorInt int chekedColor) {
             MaterialItemViewData data = new MaterialItemViewData();
-            data.drawable = Utils.newDrawable(drawable);
-            data.checkedDrawable = Utils.newDrawable(checkedDrawable);
+            data.drawable = BottomTabLayoutUtils.newDrawable(drawable);
+            data.checkedDrawable = BottomTabLayoutUtils.newDrawable(checkedDrawable);
             data.title = title;
             data.chekedColor = chekedColor;
             itemDatas.add(data);

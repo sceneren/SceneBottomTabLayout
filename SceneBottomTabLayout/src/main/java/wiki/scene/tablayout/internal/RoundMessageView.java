@@ -81,7 +81,7 @@ public class RoundMessageView extends FrameLayout {
     }
 
     public void tintMessageBackground(@ColorInt int color) {
-        Drawable drawable = Utils.tinting(ContextCompat.getDrawable(getContext(), R.drawable.round), color);
+        Drawable drawable = BottomTabLayoutUtils.tinting(ContextCompat.getDrawable(getContext(), R.drawable.round), color);
         ViewCompat.setBackground(mOval, drawable);
         ViewCompat.setBackground(mMessages, drawable);
     }

@@ -17,7 +17,7 @@ import androidx.annotation.Nullable;
 
 import wiki.scene.tablayout.R;
 import wiki.scene.tablayout.internal.RoundMessageView;
-import wiki.scene.tablayout.internal.Utils;
+import wiki.scene.tablayout.internal.BottomTabLayoutUtils;
 
 /**
  * 只有图标的材料设计项(用于垂直布局)
@@ -71,8 +71,8 @@ public class OnlyIconMaterialItemView extends BaseTabItem {
         mTintIcon = tintIcon;
 
         if (mTintIcon) {
-            mDefaultDrawable = Utils.tinting(drawable, mDefaultColor);
-            mCheckedDrawable = Utils.tinting(checkedDrawable, mCheckedColor);
+            mDefaultDrawable = BottomTabLayoutUtils.tinting(drawable, mDefaultColor);
+            mCheckedDrawable = BottomTabLayoutUtils.tinting(checkedDrawable, mCheckedColor);
         } else {
             mDefaultDrawable = drawable;
             mCheckedDrawable = checkedDrawable;
@@ -123,7 +123,7 @@ public class OnlyIconMaterialItemView extends BaseTabItem {
     @Override
     public void setDefaultDrawable(Drawable drawable) {
         if (mTintIcon) {
-            mDefaultDrawable = Utils.tinting(drawable, mDefaultColor);
+            mDefaultDrawable = BottomTabLayoutUtils.tinting(drawable, mDefaultColor);
         } else {
             mDefaultDrawable = drawable;
         }
@@ -136,7 +136,7 @@ public class OnlyIconMaterialItemView extends BaseTabItem {
     @Override
     public void setSelectedDrawable(Drawable drawable) {
         if (mTintIcon) {
-            mCheckedDrawable = Utils.tinting(drawable, mCheckedColor);
+            mCheckedDrawable = BottomTabLayoutUtils.tinting(drawable, mCheckedColor);
         } else {
             mCheckedDrawable = drawable;
         }
