@@ -13,6 +13,7 @@ import androidx.core.graphics.drawable.DrawableCompat;
 import wiki.scene.tablayout.custom.SpecialTab;
 import wiki.scene.tablayout.custom.SpecialTabRound;
 import wiki.scene.tablayout.item.BaseTabItem;
+import wiki.scene.tablayout.item.NormalItemView;
 
 
 public class BottomTabLayoutUtils {
@@ -67,7 +68,7 @@ public class BottomTabLayoutUtils {
     /**
      * 正常tab
      */
-    public static BaseTabItem newItem(Context context, @DrawableRes int drawable, @DrawableRes int checkedDrawable, String text, @ColorInt int textColor, @ColorInt int checkedTextColor) {
+    public static BaseTabItem newSpecialItem(Context context, @DrawableRes int drawable, @DrawableRes int checkedDrawable, String text, @ColorInt int textColor, @ColorInt int checkedTextColor) {
         SpecialTab mainTab = new SpecialTab(context);
         mainTab.initialize(drawable, checkedDrawable, text);
         mainTab.setTextDefaultColor(textColor);//0xFF888888
@@ -78,12 +79,21 @@ public class BottomTabLayoutUtils {
     /**
      * 圆形tab
      */
-    public static BaseTabItem newRoundItem(Context context, @DrawableRes int drawable, @DrawableRes int checkedDrawable, String text, @ColorInt int textColor, @ColorInt int checkedTextColor) {
+    public static BaseTabItem newSpecialRoundItem(Context context, @DrawableRes int drawable, @DrawableRes int checkedDrawable, String text, @ColorInt int textColor, @ColorInt int checkedTextColor) {
         SpecialTabRound mainTab = new SpecialTabRound(context);
         mainTab.initialize(drawable, checkedDrawable, text);
         mainTab.setTextDefaultColor(textColor);
         mainTab.setTextCheckedColor(checkedTextColor);
         return mainTab;
+    }
+
+    //创建一个Item
+    private BaseTabItem newNormalItem(Context context, @DrawableRes int drawable, @DrawableRes int checkedDrawable, String text, @ColorInt int textColor, @ColorInt int checkedTextColor) {
+        NormalItemView normalItemView = new NormalItemView(context);
+        normalItemView.initialize(drawable, checkedDrawable, text);
+        normalItemView.setTextDefaultColor(textColor);
+        normalItemView.setTextCheckedColor(checkedTextColor);
+        return normalItemView;
     }
 
 }
