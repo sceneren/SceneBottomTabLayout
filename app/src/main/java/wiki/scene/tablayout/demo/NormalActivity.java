@@ -34,11 +34,11 @@ public class NormalActivity extends AppCompatActivity {
         int checkedTextColor = Color.parseColor("#FF009688");
 
         NavigationController navigationController = navigationView.custom()
-                .addItem(BottomTabLayoutUtils.newItem(this, R.drawable.ic_restore_gray_24dp, R.drawable.ic_restore_teal_24dp, titles.get(0), defaultTextColor, checkedTextColor))
-                .addItem(BottomTabLayoutUtils.newItem(this, R.drawable.ic_favorite_gray_24dp, R.drawable.ic_favorite_teal_24dp, titles.get(1), defaultTextColor, checkedTextColor))
-                .addItem(BottomTabLayoutUtils.newItem(this, R.drawable.ic_nearby_gray_24dp, R.drawable.ic_nearby_teal_24dp, titles.get(2), defaultTextColor, checkedTextColor))
-                .addItem(BottomTabLayoutUtils.newItem(this, R.drawable.ic_favorite_gray_24dp, R.drawable.ic_favorite_teal_24dp, titles.get(3), defaultTextColor, checkedTextColor))
-                .addItem(BottomTabLayoutUtils.newItem(this, R.drawable.ic_restore_gray_24dp, R.drawable.ic_restore_teal_24dp, titles.get(4), defaultTextColor, checkedTextColor))
+                .addItem(BottomTabLayoutUtils.newNormalItem(this, R.drawable.ic_restore_gray_24dp, R.drawable.ic_restore_teal_24dp, titles.get(0), defaultTextColor, checkedTextColor))
+                .addItem(BottomTabLayoutUtils.newNormalItem(this, R.drawable.ic_favorite_gray_24dp, R.drawable.ic_favorite_teal_24dp, titles.get(1), defaultTextColor, checkedTextColor))
+                .addItem(BottomTabLayoutUtils.newNormalItem(this, R.drawable.ic_nearby_gray_24dp, R.drawable.ic_nearby_teal_24dp, titles.get(2), defaultTextColor, checkedTextColor))
+                .addItem(BottomTabLayoutUtils.newNormalItem(this, R.drawable.ic_favorite_gray_24dp, R.drawable.ic_favorite_teal_24dp, titles.get(3), defaultTextColor, checkedTextColor))
+                .addItem(BottomTabLayoutUtils.newNormalItem(this, R.drawable.ic_restore_gray_24dp, R.drawable.ic_restore_teal_24dp, titles.get(4), defaultTextColor, checkedTextColor))
                 .build();
         List<Fragment> fragments = new ArrayList<>();
         fragments.add(TestFragment.newInstance(0));

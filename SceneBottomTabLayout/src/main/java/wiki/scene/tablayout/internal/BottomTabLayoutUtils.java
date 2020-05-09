@@ -88,7 +88,7 @@ public class BottomTabLayoutUtils {
     }
 
     //创建一个Item
-    private BaseTabItem newNormalItem(Context context, @DrawableRes int drawable, @DrawableRes int checkedDrawable, String text, @ColorInt int textColor, @ColorInt int checkedTextColor) {
+    public static BaseTabItem newNormalItem(Context context, @DrawableRes int drawable, @DrawableRes int checkedDrawable, String text, @ColorInt int textColor, @ColorInt int checkedTextColor) {
         NormalItemView normalItemView = new NormalItemView(context);
         normalItemView.initialize(drawable, checkedDrawable, text);
         normalItemView.setTextDefaultColor(textColor);
