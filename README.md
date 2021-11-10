@@ -3,5 +3,5 @@
 maven { url 'https://jitpack.io' }
 
 dependencies {
-	        implementation 'com.github.sceneren:SceneBottomTabLayout:Tag'
+	        implementation 'com.github.sceneren:SceneBottomTabLayout:1.0.2'
 	}
